@@ -13,7 +13,7 @@
 	<nav class="border-b">
 		<ul class="flex flex-row items-center gap-4 py-4">
 			<li><a href="/">Home</a></li>
-			{#if $user?.userId}
+			{#if $user?.id}
 				<form class="ml-auto" method="post" action="/log-out">
 					<button type="submit">Sign out</button>
 				</form>

@@ -33,7 +33,7 @@ export const actions = {
 		});
 
 		// Create and set session
-		const session = await auth.createSession(user.userId);
+		const session = await auth.createSession(user.id);
 		event.locals.setSession(session);
 
 		throw redirect(302, '/');
