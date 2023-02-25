@@ -13,6 +13,7 @@ declare global {
 			setSession: SetSession;
 
 			prisma: PrismaClient;
+			formData?: { [k: string]: FormDataEntryValue };
 		}
 		// interface PageData {}
 		// interface Platform {}

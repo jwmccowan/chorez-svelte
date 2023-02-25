@@ -26,12 +26,16 @@ specifiers:
   typescript: ^4.9.3
   vite: ^4.0.0
   vitest: ^0.25.3
+  zod: ^3.20.6
+  zod-form-data: ^2.0.0
 
 dependencies:
   '@lucia-auth/adapter-prisma': 0.4.0_lucia-auth@0.6.2
   '@lucia-auth/sveltekit': 0.6.3_5ahn3lncnf4h7axlbljyxj7q64
   '@prisma/client': 4.10.1_prisma@4.10.1
   lucia-auth: 0.6.2
+  zod: 3.20.6
+  zod-form-data: 2.0.0_zod@3.20.6
 
 devDependencies:
   '@playwright/test': 1.31.1
@@ -2435,3 +2439,15 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zod-form-data/2.0.0_zod@3.20.6:
+    resolution: {integrity: sha512-NmQVAcL4/W1PEWaS3hGXM3DxRSiOsX8p7vHPF3rt6aQs2+Nqxs4QuapZ1ncv3E+iRN86zthbZJRvz6q9Jl5A/g==}
+    peerDependencies:
+      zod: ^3.11.x
+    dependencies:
+      zod: 3.20.6
+    dev: false
+
+  /zod/3.20.6:
+    resolution: {integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==}
+    dev: false
