@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  // id, session, and Key are all mandatory from lucia
+  id      String    @id @unique
+  session Session[]
+  Key     Key[]
+
+  // The following are not needed by lucia, but can be added in the...
+  // lucia auth client if you want them attached to the requests
+  // Don't forget to add them to the `auth.d.ts`
+  name String?
+
+  @@map("user")
+}
+
+// Do not edit - managed by lucia-auth
+model Session {
+  id             String @id @unique
+  user_id        String
+  active_expires BigInt
+  idle_expires   BigInt
+  user           User   @relation(references: [id], fields: [user_id], onDelete: Cascade)
+
+  @@index([user_id])
+  @@map("session")
+}
+
+// Do not edit - managed by lucia-auth
+model Key {
+  id              String  @id @unique
+  hashed_password String?
+  user_id         String
+  primary         Boolean
+  user            User    @relation(references: [id], fields: [user_id], onDelete: Cascade)
+
+  @@index([user_id])
+  @@map("key")
+}
