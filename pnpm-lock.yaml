@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@lucia-auth/adapter-prisma': ^0.4.0
   '@playwright/test': ^1.28.1
   '@prisma/client': ^4.10.1
   '@sveltejs/adapter-auto': ^2.0.0
@@ -26,6 +27,7 @@ specifiers:
   vitest: ^0.25.3
 
 dependencies:
+  '@lucia-auth/adapter-prisma': 0.4.0_lucia-auth@0.6.2
   '@prisma/client': 4.10.1_prisma@4.10.1
   lucia-auth: 0.6.2
 
@@ -304,6 +306,14 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
+
+  /@lucia-auth/adapter-prisma/0.4.0_lucia-auth@0.6.2:
+    resolution: {integrity: sha512-HMaGbVfB5KTZBs6KPqI5z6RFKVl4AKfm9u2KrrQglthpd/rWJoJRDI2oYkdcEX4Xu1FNdNJJrEtKKBtVAXYqrw==}
+    peerDependencies:
+      lucia-auth: 0.6.x
+    dependencies:
+      lucia-auth: 0.6.2
+    dev: false
 
   /@noble/hashes/1.2.0:
     resolution: {integrity: sha512-FZfhjEDbT5GRswV3C6uvLPHMiVD6lQBmpoX5+eSiPaMTXte/IKqI5dykDxzZB/WBeK/CDuQRBWarPdi3FNY2zQ==}
