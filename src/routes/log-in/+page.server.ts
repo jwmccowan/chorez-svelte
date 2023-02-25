@@ -33,6 +33,9 @@ export const actions = {
 			throw error(400, 'Invalid credentials');
 		}
 
-		throw redirect(302, '/');
+		// Redirect to either the referring path or to '/'
+		const url = new URL(event.request.url);
+		const referrer = url.searchParams.get('referrer') ?? '/';
+		throw redirect(302, referrer);
 	}
 } satisfies Actions;
