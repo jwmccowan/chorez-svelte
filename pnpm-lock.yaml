@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@lucia-auth/adapter-prisma': ^0.4.0
+  '@lucia-auth/sveltekit': ^0.6.3
   '@playwright/test': ^1.28.1
   '@prisma/client': ^4.10.1
   '@sveltejs/adapter-auto': ^2.0.0
@@ -28,6 +29,7 @@ specifiers:
 
 dependencies:
   '@lucia-auth/adapter-prisma': 0.4.0_lucia-auth@0.6.2
+  '@lucia-auth/sveltekit': 0.6.3_5ahn3lncnf4h7axlbljyxj7q64
   '@prisma/client': 4.10.1_prisma@4.10.1
   lucia-auth: 0.6.2
 
@@ -313,6 +315,17 @@ packages:
       lucia-auth: 0.6.x
     dependencies:
       lucia-auth: 0.6.2
+    dev: false
+
+  /@lucia-auth/sveltekit/0.6.3_5ahn3lncnf4h7axlbljyxj7q64:
+    resolution: {integrity: sha512-Xs0dTcmr/XtHrORAHAqvRt7KbZLokIXw/YT9HuP8zJ+9a3ARhwffr/p4JJVAzzSNI9oM8qNs/O8FdKSzbI+3/w==}
+    peerDependencies:
+      lucia-auth: 0.5.x - 0.6.x
+      svelte: 3.x
+    dependencies:
+      '@noble/hashes': 1.2.0
+      lucia-auth: 0.6.2
+      svelte: 3.55.1
     dev: false
 
   /@noble/hashes/1.2.0:
@@ -2098,7 +2111,6 @@ packages:
   /svelte/3.55.1:
     resolution: {integrity: sha512-S+87/P0Ve67HxKkEV23iCdAh/SX1xiSfjF1HOglno/YTbSTW7RniICMCofWGdJJbdjw3S+0PfFb1JtGfTXE0oQ==}
     engines: {node: '>= 8'}
-    dev: true
 
   /tailwindcss/3.2.7_postcss@8.4.21:
     resolution: {integrity: sha512-B6DLqJzc21x7wntlH/GsZwEXTBttVSl1FtCzC8WP4oBc/NKef7kaax5jeihkkCEWc831/5NDJ9gRNDK6NEioQQ==}
