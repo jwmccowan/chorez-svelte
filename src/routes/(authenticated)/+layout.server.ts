@@ -5,8 +5,8 @@ import type { LayoutServerLoad } from './$types';
 export const load: LayoutServerLoad = async (event) => {
 	const { session, user } = await event.locals.validateUser();
 	if (!session) {
-		const { pathname } = new URL(event.request.url);
-		throw redirect(301, getLogInUrl(pathname));
+		const { pathname } = new URL(event.url);
+		throw redirect(301, getLogInUrl(encodeURIComponent(pathname)));
 	}
 	return { user };
 };
