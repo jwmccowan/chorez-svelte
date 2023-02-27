@@ -18,8 +18,9 @@ model User {
 
   // The following are not needed by lucia, but can be added in the...
   // lucia auth client if you want them attached to the requests
-  // Don't forget to add them to the `auth.d.ts`
-  name String?
+  // Don't forget to add them to the `auth.d.ts` if you want it in session
+  name   String?
+  chores Chore[]
 
   @@map("user")
 }
@@ -46,4 +47,20 @@ model Key {
 
   @@index([user_id])
   @@map("key")
+}
+
+model Chore {
+  id          String   @id @default(uuid())
+  title       String   @map("chore_title") @db.VarChar(50)
+  description String   @map("chore_description") @db.VarChar(300)
+  due         DateTime @map("due_date") @db.Date()
+
+  userId    String @map("created_by")
+  createdBy User   @relation(references: [id], fields: [userId], onDelete: Cascade)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([userId])
+  @@map("chore")
 }

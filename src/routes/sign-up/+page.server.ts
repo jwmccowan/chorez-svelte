@@ -1,6 +1,6 @@
 import { error, redirect } from '@sveltejs/kit';
 import { z } from 'zod';
-import { auth } from '../../auth/lucia.server';
+import { auth } from '$lib/auth/lucia.server';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load = (async (event) => {

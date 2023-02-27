@@ -1,7 +1,7 @@
 import lucia from 'lucia-auth';
 import prismaAdapter from '@lucia-auth/adapter-prisma';
-import prisma from '../db/prisma.server';
 import { dev } from '$app/environment';
+import prisma from '$lib/db/prisma.server';
 
 export const auth = lucia({
 	adapter: prismaAdapter(prisma),

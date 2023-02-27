@@ -1,8 +1,8 @@
 import { handleHooks } from '@lucia-auth/sveltekit';
 import type { Handle } from '@sveltejs/kit';
 import { sequence } from '@sveltejs/kit/hooks';
-import { auth } from './auth/lucia.server';
-import prisma from './db/prisma.server';
+import { auth } from '$lib/auth/lucia.server';
+import prisma from '$lib/db/prisma.server';
 
 const attachPrisma: Handle = async ({ event, resolve }) => {
 	event.locals.prisma = prisma;

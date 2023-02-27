@@ -1,5 +1,5 @@
 <script>
-	import FormInput from '../../common/components/form-input.svelte';
+	import FormInput from '$lib/common/components/form-input.svelte';
 </script>
 
 <main>

@@ -1,6 +1,6 @@
 import { error, redirect } from '@sveltejs/kit';
 import { z } from 'zod';
-import { auth } from '../../auth/lucia.server';
+import { auth } from '$lib/auth/lucia.server';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load = (async (event) => {
@@ -34,8 +34,7 @@ export const actions = {
 		}
 
 		// Redirect to either the referring path or to '/'
-		const url = new URL(event.request.url);
-		const referrer = url.searchParams.get('referrer') ?? '/';
+		const referrer = event.url.searchParams.get('referrer') ?? '/';
 		throw redirect(302, referrer);
 	}
 } satisfies Actions;
